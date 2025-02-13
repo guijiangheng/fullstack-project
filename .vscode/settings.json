@@ -1,0 +1,21 @@
+{
+  "cSpell.words": [
+    "callees",
+    "clsx",
+    "codesandbox",
+    "lucide",
+    "Pluggable",
+    "Sandpack",
+    "shiki"
+  ],
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "explicit",
+    "source.addMissingImports.ts": "always"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ]
+}
