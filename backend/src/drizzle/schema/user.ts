@@ -1,14 +1,11 @@
-import { index, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
+import { pgTable, text } from 'drizzle-orm/pg-core';
+
+import { createdAt, id, updatedAt } from './helper';
 
 export const UserTable = pgTable("users", {
-  id: uuid().primaryKey().defaultRandom(),
-  username: text().notNull(),
+  id,
+  username: text().notNull().unique(),
   password: text().notNull(),
-  createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
-  updatedAt: timestamp({ withTimezone: true })
-    .notNull()
-    .defaultNow()
-    .$onUpdate(() => new Date()),
-}, (table) => [
-  index("username_index").on(table.username)
-]);
+  createdAt,
+  updatedAt,
+});
